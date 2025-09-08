@@ -2,7 +2,14 @@ console.log("✅ jobForm.js loaded inside modal");
 
 // Detect API base depending on environment
 // 👇 Always point to your deployed backend
-const API_BASE = "https://jobs-admin-production.up.railway.app";
+const API_BASE = "https://<your-app>.up.railway.app";
+
+const res = await fetch(API_BASE + "/api/jobs", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
   // Railway or any deployed host
 
 // Function to attach submit handler once form exists
