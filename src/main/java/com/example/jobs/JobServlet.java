@@ -2,18 +2,17 @@ package com.example.jobs;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.gson.internal.bind.util.ISO8601Utils;
-import org.w3c.dom.ls.LSOutput;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-
+@WebServlet("/api/jobs") // ✅ Important mapping!
 public class JobServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -55,6 +54,7 @@ public class JobServlet extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_CREATED);
             resp.getWriter().write(ok.toString());
         } catch (Exception e) {
+            e.printStackTrace();
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             resp.getWriter().write(error(e.getMessage()));
         }
@@ -75,6 +75,7 @@ public class JobServlet extends HttpServlet {
             List<Job> jobs = dao.listFiltered(title, location, jobType, smin, smax);
             resp.getWriter().write(gson.toJson(jobs));
         } catch (Exception e) {
+            e.printStackTrace();
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             resp.getWriter().write(error(e.getMessage()));
         }
@@ -88,7 +89,11 @@ public class JobServlet extends HttpServlet {
         if (v == null) return null;
         v = v.trim();
         if (v.isEmpty()) return null;
-        try { return Integer.valueOf(v); } catch (NumberFormatException ex) { return null; }
+        try { 
+            return Integer.valueOf(v); 
+        } catch (NumberFormatException ex) { 
+            return null; 
+        }
     }
 
     private String error(String msg) {
