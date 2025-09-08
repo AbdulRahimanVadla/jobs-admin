@@ -31,7 +31,7 @@ const tryAttach = () => {
     };
 
     try {
-      const res = await fetch(window.location.origin + "/jobs-admin/api/jobs", {
+      const res = await fetch(window.location.origin + "/api/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
