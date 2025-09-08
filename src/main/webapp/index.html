@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- ===== Header ===== -->
+<header class="site-header">
+    <div class="container">
+        <!-- Rounded pill nav -->
+        <div class="nav-pill">
+            <div class="logo-chip">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Find Jobs</a>
+                <a href="#">Find Talents</a>
+                <a href="#">About us</a>
+                <a href="#">Testimonials</a>
+            </nav>
+
+            <a href="#" id="openModal" class="btn-purple">Create Jobs</a>
+        </div>
+
+        <!-- Filters row -->
+        <div class="filters-row">
+            <!-- Search -->
+            <div class="chip search-chip">
+                <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="text" placeholder="Search By Job Title, Role">
+            </div>
+
+            <!-- Location -->
+            <div class="chip">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <span>Preferred Location</span>
+                <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+
+            <!-- Job type -->
+            <div class="chip">
+                <svg viewBox="0 0 24 24" class="icon"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <span>Job type</span>
+                <svg viewBox="0 0 24 24" class="chev"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+
+            <!-- Salary range -->
+            <div class="salary-wrap">
+                <span class="salary-label">Salary Per Month</span>
+                <div class="salary-slider" id="salarySlider">
+                    <div class="track"></div>
+                    <input id="minRange" type="range" min="10000" max="150000" step="5000" value="50000" />
+                    <input id="maxRange" type="range" min="10000" max="150000" step="5000" value="80000" />
+                </div>
+                <span class="salary-value" id="salaryValue">₹50k - ₹80k</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== Job Grid ===== -->
+<main class="page-main">
+    <div class="container">
+        <section class="grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/amazon.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Full Stack Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/tesla.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Node Js Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/swiggy.jpg" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>UX/UI Designer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/amazon.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Full Stack Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <!-- Bottom row to fill page -->
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/tesla.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Node Js Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/swiggy.jpg" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>UX/UI Designer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/amazon.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Full Stack Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="company-logo"><img src="./pics/tesla.png" alt=""></div>
+                    <span class="ago">24h Ago</span>
+                </div>
+                <h3>Node Js Developer</h3>
+                <div class="meta"><span>👤 1–3 yr Exp</span><span>🏢 Onsite</span><span>💰 12LPA</span></div>
+                <ul class="desc">
+                    <li>A user-friendly interface lets you browse stunning photos and videos</li>
+                    <li>Filter destinations based on interests and travel style, and create personalized</li>
+                </ul>
+                <button class="apply">Apply Now</button>
+            </article>
+        </section>
+    </div>
+</main>
+
+<!-- Salary dual-range logic -->
+<script>
+    const minR = document.getElementById('minRange');
+    const maxR = document.getElementById('maxRange');
+    const out  = document.getElementById('salaryValue');
+    const step = 5000;
+    const toK  = v => '₹' + (v/1000).toFixed(0) + 'k';
+
+    function clamp() {
+      if (parseInt(minR.value) > parseInt(maxR.value) - step) {
+        minR.value = maxR.value - step;
+      }
+      out.textContent = `${toK(minR.value)} - ${toK(maxR.value)}`;
+    }
+    minR.addEventListener('input', clamp);
+    maxR.addEventListener('input', clamp);
+    clamp();
+</script>
+<!-- Modal (hidden by default) -->
+<div id="jobModal" class="modal">
+    <div class="job-form" id="modalContent"></div>
+</div>
+<script>
+    const modal = document.getElementById("jobModal");
+    const modalContent = document.getElementById("modalContent");
+    const openBtn = document.getElementById("openModal"); // your "Create Jobs" button
+
+    openBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      fetch("createJob.html") // load form file
+        .then(res => res.text())
+        .then(html => {
+          modalContent.innerHTML = html;
+
+          // add close button
+          const closeBtn = document.createElement("span");
+          closeBtn.innerHTML = "&times;";
+          closeBtn.className = "close-btn";
+          modalContent.prepend(closeBtn);
+          closeBtn.onclick = () => modal.classList.remove("active");
+
+          modal.classList.add("active");
+
+          // load form logic
+          const script = document.createElement("script");
+          script.src = "jobForm.js";
+          modalContent.appendChild(script);
+        });
+    });
+
+    // click outside closes modal
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+</script>
+<script src="jobForm.js"></script>
+
+</body>
+</html>

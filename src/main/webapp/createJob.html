@@ -1,0 +1,70 @@
+<main class="job-form-modal">
+    <div class="job-form">
+        <h2>Create Job Opening</h2>
+
+        <form id="jobForm" class="form-grid">
+
+            <!-- Job Title -->
+            <div class="form-group">
+                <label for="title"><b>Job Title</b></label>
+                <input type="text" id="title" name="title" placeholder="Enter Job Title" required />
+            </div>
+
+            <!-- Company Name -->
+            <div class="form-group">
+                <label for="companyName"><b>Company Name</b></label>
+                <input type="text" id="companyName" name="companyName" placeholder="Amazon, Microsoft, Swiggy" required />
+            </div>
+
+            <!-- Location -->
+            <div class="form-group">
+                <label for="location"><b>Location</b></label>
+                <select id="location" name="location" required>
+                    <option selected disabled>Choose Preferred Location</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+            </div>
+
+            <!-- Job Type -->
+            <div class="form-group">
+                <label for="jobType"><b>Job Type</b></label>
+                <select id="jobType" name="jobType" required>
+                    <option value="Internship">Internship</option>
+                    <option value="Full-time" selected>Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                </select>
+            </div>
+
+            <!-- Salary Range -->
+            <div class="form-group">
+                <label><b>Salary Range</b></label>
+                <div class="salary-inputs">
+                    <input type="number" name="salaryMin" placeholder="Min Salary" />
+                    <input type="number" name="salaryMax" placeholder="Max Salary" />
+                </div>
+            </div>
+
+            <!-- Application Deadline -->
+            <div class="form-group">
+                <label for="applicationDeadline"><b>Application Deadline</b></label>
+                <input type="date" id="applicationDeadline" name="applicationDeadline" />
+            </div>
+
+            <!-- Job Description -->
+            <div class="form-group full-width">
+                <label for="description"><b>Job Description</b></label>
+                <textarea id="description" name="description" placeholder="Please share a description..." required></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+                <button type="button" class="btn-outline">Save Draft ▾</button>
+                <button type="submit" class="btn-primary">Publish »</button>
+            </div>
+        </form>
+    </div>
+</main>
