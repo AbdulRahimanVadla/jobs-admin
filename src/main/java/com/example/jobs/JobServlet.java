@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/api/jobs") // ✅ Important mapping!
+@WebServlet("/api/jobs")   // ✅ This makes your servlet accessible at /api/jobs
 public class JobServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -34,9 +34,10 @@ public class JobServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         cors(resp);
-        System.out.println("Do Post");
+        System.out.println("➡️ Received POST /api/jobs");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json;charset=UTF-8");
+
         try (BufferedReader br = req.getReader()) {
             Job j = gson.fromJson(br, Job.class);
 
@@ -89,10 +90,10 @@ public class JobServlet extends HttpServlet {
         if (v == null) return null;
         v = v.trim();
         if (v.isEmpty()) return null;
-        try { 
-            return Integer.valueOf(v); 
-        } catch (NumberFormatException ex) { 
-            return null; 
+        try {
+            return Integer.valueOf(v);
+        } catch (NumberFormatException ex) {
+            return null;
         }
     }
 
