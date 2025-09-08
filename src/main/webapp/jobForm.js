@@ -1,5 +1,11 @@
 console.log("✅ jobForm.js loaded inside modal");
 
+// Detect API base depending on environment
+const API_BASE =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8080" // local Tomcat/Jetty
+    : window.location.origin;  // Railway or any deployed host
+
 // Function to attach submit handler once form exists
 const tryAttach = () => {
   const jobForm = document.getElementById("jobForm");
@@ -31,7 +37,7 @@ const tryAttach = () => {
     };
 
     try {
-      const res = await fetch(window.location.origin + "/api/jobs", {
+      const res = await fetch(API_BASE + "/api/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
