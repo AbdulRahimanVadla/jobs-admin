@@ -1,10 +1,9 @@
 console.log("✅ jobForm.js loaded inside modal");
 
 // Detect API base depending on environment
-const API_BASE =
-  window.location.hostname === "localhost"
-    ? "http://localhost:8080" // local Tomcat/Jetty
-    : window.location.origin;  // Railway or any deployed host
+// 👇 Always point to your deployed backend
+const API_BASE = "https://jobs-admin-production.up.railway.app";
+  // Railway or any deployed host
 
 // Function to attach submit handler once form exists
 const tryAttach = () => {
